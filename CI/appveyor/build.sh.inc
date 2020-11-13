@@ -32,8 +32,7 @@ fi
 build_osc () {
 	mkdir -p "${CURDIR}/build"
 	cd "${CURDIR}/build"
-	cmake -DCMAKE_INSTALL_PREFIX=${INSTALL_PREFIX} \
-		-DCMAKE_SYSROOT="${SYSROOT}" \
+	cmake -DCMAKE_INSTALL_PREFIX="${SYSROOT}/${INSTALL_PREFIX}" \
 		..
 	make ${MAKE_J}
 	make install
